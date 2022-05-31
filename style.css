@@ -117,6 +117,11 @@ h6 {
     color: #000;
 }
 
+.content.post p,
+.content.post pre {
+    margin: var(--spacing) 0;
+}
+
 .footer {
     border-top: 1px solid;
     padding-top: 5px;
