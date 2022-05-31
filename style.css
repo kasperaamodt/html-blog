@@ -136,7 +136,7 @@ h6 {
 
 @media (max-width: 650px) {
     :root {
-        --spacing: 150px;
+        --spacing: 15px;
     }
     body {
         margin: 10px;
