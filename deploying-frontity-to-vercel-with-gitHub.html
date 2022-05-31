@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Deploying Frontity to Vercel with GitHub - Kasper Aamodt Blog
+        </title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <a href="/">Kasper Aamodt</a>
+            </div>
+
+            <div class="content post">
+                <h1>Deploying Frontity to Vercel with GitHub</h1>
+
+                <p>
+                    I&#39;m a big fan of Frontity, and one of the things I
+                    really like is the ease of hosting the frontend. I chose
+                    Vercel out of the options available, and could not be
+                    happier with the choice. But one thing that I could not find
+                    much information on was deploying the site to Vercel with
+                    GitHub.
+                </p>
+
+                <p>
+                    That&#39;s why I&#39;m writing this article, so that you can
+                    learn to deploy Frontity to Vercel with GitHub. When I first
+                    tried it, I got an error that the build could not be
+                    completed because it did not find a public folder. So I gave
+                    up for a bit, and just went back to deploying with the CLI.
+                    But today I sat down and tried for real.
+                </p>
+
+                <p>
+                    After searching for a while in the community, I found
+                    nothing. So I decided to just try my luck. I have been
+                    messing around in the project settings for Vercel before, so
+                    I started there again. Under the general tab of the project
+                    settings, I found “Build & Development Settings”. Here I
+                    entered the frontity build commands, instead of the default
+                    ones.
+                </p>
+
+                <p>
+                    And that did the trick, when I added a new commit to my main
+                    branch, Vercel made a new production commit, and it was
+                    deployed successfully. So here are the steps you need to
+                    take to make it work:
+                </p>
+
+                <h2>Change the Build & Development Settings</h2>
+
+                <p>
+                    First, you need to change the Build & Development Settings,
+                    you can do this in the project settings, under the general
+                    tab. Switch the button on the right of every field to
+                    override, and then enter the following for each field:
+                </p>
+
+                <ul>
+                    <li>Under framework, select “other”</li>
+                    <li>Build command -&gt; frontity build</li>
+                    <li>Output directory -&gt; /</li>
+                    <li>Install command -&gt; npm install</li>
+                    <li>Development command -&gt; frontity dev</li>
+                </ul>
+
+                <p>When you have changed all the settings, click save.</p>
+
+                <h2>Connect Vercel to Github</h2>
+
+                <p>
+                    The next step is to connect Vercel to GitHub, you can do
+                    this in the project settings under the git tab. Just select
+                    GitHub, and go through the steps and connect your account.
+                </p>
+
+                <p>Before you click, it should look something like this:</p>
+
+                <p>
+                    And after you have gone through the steps and selected a
+                    repo, it should look like this:
+                </p>
+
+                <p>
+                    PS! If you want to deploy from a GitHub organization, you
+                    need
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://vercel.com/pricing"
+                        >Vercel Pro</a
+                    >.
+                </p>
+
+                <h2>Make a commit to the repo</h2>
+
+                <p>
+                    Now all that remains is to make a commit to the repo. By
+                    default, Vercel sets the production branch to “main”, so if
+                    you use something else, like for instance “master”, you need
+                    to change that in the project settings as well, under the
+                    git tab.
+                </p>
+
+                <p>
+                    So now, every time you make a commit to the production
+                    branch, Vercel will automatically make a production
+                    deployment with that brach. And if you want to preview
+                    something that you have done, you can create a new branch,
+                    and commit it. Vercel will then automatically make a preview
+                    deployment of that brach.
+                </p>
+
+                <p>
+                    PS! Make sure that you include the vercel.json file in the
+                    repo, the deployment won&#39;t work without it.
+                </p>
+
+                <pre>
+                    <code>
+                    {
+                        "version": 2,
+                        "builds": [{
+                            "src": "package.json",
+                            "use": "@frontity/now"
+                        }]
+                    }
+                    </code>
+                </pre>
+
+                <p>
+                    So that&#39;s it, that&#39;s how you deploy Frontity to
+                    Vercel with GitHub. If you have any questions, feel free to
+                    reach out to me, either by
+                    <a href="mailto:kasper@aamodtgroup.com">email</a> or
+                    <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://twitter.com/kasperaamodt"
+                        >Twitter</a
+                    >.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
