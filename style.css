@@ -129,3 +129,9 @@ h6 {
 .footer a {
     color: #000;
 }
+
+@media (max-width: 640px) {
+    body {
+        margin: 5px;
+    }
+}
