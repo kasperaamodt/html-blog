@@ -117,13 +117,6 @@ h6 {
     color: #000;
 }
 
-.content.post p,
-.content.post li,
-.content.post a,
-.content.post span {
-    font-family: serif;
-}
-
 .footer {
     border-top: 1px solid;
     padding-top: 5px;
