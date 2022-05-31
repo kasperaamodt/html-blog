@@ -3,7 +3,6 @@ body {
     padding: 0;
     margin: 0;
     background-color: #d6e8fe;
-    font-size: 18px;
 }
 
 body {
@@ -48,7 +47,7 @@ body {
     margin: 0;
 }
 
-.content ul li {
+.content ul li a, .content ul li b {
     font-size: 1rem;
     color: #000;
 }
