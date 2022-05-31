@@ -47,7 +47,19 @@ body {
     margin: 0;
 }
 
-.content ul li a, .content ul li b {
+.content ul li a,
+.content ul li b {
     font-size: 1rem;
     color: #000;
+}
+
+.footer {
+    border-top: 1px solid;
+    padding-top: 5px;
+    margin-top: 30px;
+}
+
+.footer a {
+    color: #000;
+    text-decoration: none;
 }
