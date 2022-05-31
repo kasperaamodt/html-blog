@@ -86,9 +86,13 @@ h6 {
     --background-html: #000;
 }
 
+.svgLogo {
+    color: var(--foreground);
+}
+
 .theme {
-    height: 20px;
-    width: 20px;
+    height: 24px;
+    width: 24px;
     background-color: var(--foreground);
     border-radius: 5px;
     cursor: pointer;
