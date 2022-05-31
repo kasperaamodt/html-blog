@@ -115,7 +115,6 @@ h6 {
 .header a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: var(--foreground);
     font-weight: 500;
 }
 
@@ -153,7 +152,7 @@ pre {
     margin-top: var(--spacing);
 }
 
-.footer a {
+a {
     color: var(--foreground);
 }
 
