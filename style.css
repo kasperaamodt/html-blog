@@ -117,9 +117,15 @@ h6 {
     color: #000;
 }
 
-.content.post p,
-.content.post pre {
+.content.post p {
     margin: var(--spacing) 0;
+}
+
+pre {
+    margin: calc(var(--spacing) / 2) 0;
+    padding: calc(var(--spacing) / 2) 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
 
 .footer {
